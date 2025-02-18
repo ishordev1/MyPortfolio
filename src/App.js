@@ -18,7 +18,7 @@ const MainContent = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Handle scroll to section when navigating back from project page
+   
     if (location.state?.scrollTo) {
       const element = document.getElementById(location.state.scrollTo);
       if (element) {
@@ -27,7 +27,7 @@ const MainContent = () => {
         }, 100);
       }
     }
-  }, [location]);
+  }, [location, location.state?.scrollTo]); 
 
   return (
     <>
@@ -55,9 +55,9 @@ const App = () => {
 
   useEffect(() => {
     // Reset scroll position when route changes
-    if (!location.state?.scrollTo) {
-      window.scrollTo(0, 0);
-    }
+    // if (!location.state?.scrollTo) {
+    //   window.scrollTo(0, 0);
+    // }
   }, [location.pathname]);
 
   return (

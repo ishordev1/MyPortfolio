@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { motion, useAnimationControls } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const MouseEffect = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [particles, setParticles] = useState([]);
-  const controls = useAnimationControls();
+
 
   // Generate particles
   const generateParticles = useCallback(() => {
